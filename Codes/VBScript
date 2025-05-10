@@ -1,0 +1,292 @@
+'WGMgr.DeleteAll 
+ 
+'ObservePtMgr.DeleteAll 
+ 
+'PointSourceMgr.DeleteAll 
+ 
+'InputPlaneMgr.DeleteAll 
+ 
+Dim substrate 
+Set substrate = WGMgr.CreateObj ( "WGLinear", "substrate" ) 
+substrate.SetPositionEx    0,    0,    0,    0, "silicon+substrate", "", "silicon+substrate+nitride-etching", "" 
+substrate.SetAttr "WidthExpr", "width" 
+substrate.SetAttr "Depth", "0" 
+substrate.SetAttr "StartThickness", "0.000000" 
+substrate.SetAttr "EndThickness", "0.000000" 
+substrate.SetProfileName "Channel_glass" 
+substrate.SetDefaultThicknessTaperMode True 
+ 
+Dim silicon 
+Set silicon = WGMgr.CreateObj ( "WGLinear", "silicon" ) 
+silicon.SetPositionEx    0,    0,    0,    0, "silicon+substrate+nitride-etching", "", "silicon+substrate+nitride", "" 
+silicon.SetAttr "WidthExpr", "width*DC" 
+silicon.SetAttr "Depth", "0" 
+silicon.SetAttr "StartThickness", "0.000000" 
+silicon.SetAttr "EndThickness", "0.000000" 
+silicon.SetProfileName "Channel_SiliconNitride" 
+silicon.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear11 
+Set Linear11 = WGMgr.CreateObj ( "WGLinear", "Linear11" ) 
+Linear11.SetPositionEx    0,    0,    0,    0, "silicon+substrate+nitride-etching", "-(width/4)-(width*DC/4)", "silicon+substrate+ nitride -etching+chrome", "-(width/4)-(width*DC/4)" 
+Linear11.SetAttr "WidthExpr", "(width-width*DC)/2" 
+Linear11.SetAttr "Depth", "0" 
+Linear11.SetAttr "StartThickness", "0.000000" 
+Linear11.SetAttr "EndThickness", "0.000000" 
+Linear11.SetProfileName "Channel_tio2" 
+Linear11.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear2 
+Set Linear2 = WGMgr.CreateObj ( "WGLinear", "Linear2" ) 
+Linear2.SetPositionEx    0,    0,    0,    0, "silicon+substrate+nitride", "", "silicon+substrate+nitride+chrome", "" 
+Linear2.SetAttr "WidthExpr", "width*DC" 
+Linear2.SetAttr "Depth", "0" 
+Linear2.SetAttr "StartThickness", "0.000000" 
+Linear2.SetAttr "EndThickness", "0.000000" 
+Linear2.SetProfileName "Channel_tio2" 
+Linear2.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear3 
+Set Linear3 = WGMgr.CreateObj ( "WGLinear", "Linear3" ) 
+Linear3.SetPositionEx    0,    0,    0,    0, "silicon", "", "silicon+substrate", "" 
+Linear3.SetAttr "WidthExpr", "width" 
+Linear3.SetAttr "Depth", "0" 
+Linear3.SetAttr "StartThickness", "0.000000" 
+Linear3.SetAttr "EndThickness", "0.000000" 
+Linear3.SetProfileName "Channel_glass" 
+Linear3.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear10 
+Set Linear10 = WGMgr.CreateObj ( "WGLinear", "Linear10" ) 
+Linear10.SetPositionEx    0,    0,    0,    0, "silicon+substrate+nitride-etching+chrome", "(width/4)+(width*DC/4)", "silicon+substrate+nitride-etching+chrome+gold", "(width/4)+(width*DC/4)" 
+Linear10.SetAttr "WidthExpr", "(width-width*DC)/2" 
+Linear10.SetAttr "Depth", "0" 
+Linear10.SetAttr "StartThickness", "0.000000" 
+Linear10.SetAttr "EndThickness", "0.000000" 
+Linear10.SetProfileName "Channel_gold" 
+Linear10.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear1 
+Set Linear1 = WGMgr.CreateObj ( "WGLinear", "Linear1" ) 
+Linear1.SetPositionEx    0,    0,    0,    0, "0", "", "silicon", "" 
+Linear1.SetAttr "WidthExpr", "width" 
+Linear1.SetAttr "Depth", "0" 
+Linear1.SetAttr "StartThickness", "0.000000" 
+Linear1.SetAttr "EndThickness", "0.000000" 
+Linear1.SetProfileName "Channel_glass" 
+Linear1.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear5 
+Set Linear5 = WGMgr.CreateObj ( "WGLinear", "Linear5" ) 
+Linear5.SetPositionEx    0,    0,    0,    0, "silicon+substrate+nitride-etching", "(width/4)+(width*DC/4)", "silicon+substrate+nitride-etching+chrome", "(width/4)+(width*DC/4)" 
+Linear5.SetAttr "WidthExpr", "(width-width*DC)/2" 
+Linear5.SetAttr "Depth", "0" 
+Linear5.SetAttr "StartThickness", "0.000000" 
+Linear5.SetAttr "EndThickness", "0.000000" 
+Linear5.SetProfileName "Channel_tio2" 
+Linear5.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear4 
+Set Linear4 = WGMgr.CreateObj ( "WGLinear", "Linear4" ) 
+Linear4.SetPositionEx    0,    0,    0,    0, "silicon+substrate+nitride+chrome", "", "silicon+substrate+nitride+chrome+gold", "" 
+Linear4.SetAttr "WidthExpr", "width*DC" 
+Linear4.SetAttr "Depth", "0" 
+Linear4.SetAttr "StartThickness", "0.000000" 
+Linear4.SetAttr "EndThickness", "0.000000" 
+Linear4.SetProfileName "Channel_gold" 
+Linear4.SetDefaultThicknessTaperMode True 
+ 
+Dim Linear6 
+Set Linear6 = WGMgr.CreateObj ( "WGLinear", "Linear6" ) 
+Linear6.SetPositionEx    0,    0,    0,    0, "silicon+substrate+nitride-etching+chrome", "-(width/4)-(width*DC/4)", "silicon+substrate+nitride-etching+chrome+gold", "-(width/4)-(width*DC/4)" 
+Linear6.SetAttr "WidthExpr", "(width-width*DC)/2" 
+Linear6.SetAttr "Depth", "0" 
+Linear6.SetAttr "StartThickness", "0.000000" 
+Linear6.SetAttr "EndThickness", "0.000000" 
+Linear6.SetProfileName "Channel_gold" 
+Linear6.SetDefaultThicknessTaperMode True 
+ 
+Dim InputPlane1 
+Set InputPlane1 = InputPlaneMgr.CreateInputObj ( "Pulse", "Rectangular", "InputPlane1", "Vertical" ) 
+'Common data for 2D and 3D. 
+InputPlane1.SetPosition 1.758 
+InputPlane1.SetDirection "Backward" 
+InputPlane1.SetWaveLength "0.6" 
+InputPlane1.SetTimeHalfWidth "0.02e-14" 
+InputPlane1.SetTimeOffset "2.5e-14" 
+InputPlane1.SetEnabled  True 
+'Data for 2D. 
+InputPlane1.SetAmplitudeOrPower "Amplitude", "1.0" 
+InputPlane1.SetRefLocal 
+InputPlane1.SetCenterPos "0.0" 
+InputPlane1.SetHalfWidth "0.5" 
+InputPlane1.SetTiltingAngle "0" 
+'Data for 3D. 
+InputPlane1.SetAmplitudeExpr3D "1.0" 
+InputPlane1.SetRefLocal3D 
+InputPlane1.SetCenterPosExpr3D "0.0", "0.0" 
+InputPlane1.SetHalfWidthExpr3D "0.5", "0.5" 
+InputPlane1.SetTiltingAngleExpr3D "0" 
+InputPlane1.SetLYPolarization3D 
+InputPlane1.RefreshInputField  
+ 
+Dim Reflected 
+Set Reflected = ObservePtMgr.CreateObservationLine ( "Reflected" )
+Reflected.SetCenter 1.825,    0 
+Reflected.SetEnabled  True 
+Reflected.Collect2DTE  True, False 
+Reflected.Collect2DTM  True, False 
+Reflected.SetLengthOffset  0.000 
+Reflected.SetLengthExpr  "width" 
+Reflected.SetAngle  90.000 
+ 
+Dim Transmitted 
+Set Transmitted = ObservePtMgr.CreateObservationLine ( "Transmitted" ) 
+Transmitted.SetCenter 0.7325,    0 
+Transmitted.SetEnabled  True 
+Transmitted.Collect2DTE  True, False 
+Transmitted.Collect2DTM  True, False 
+Transmitted.SetLengthOffset  0.000 
+Transmitted.SetLengthExpr  "width" 
+Transmitted.SetAngle  90.000 
+ 
+Dim ObservationPt1 
+Set ObservationPt1 = ObservePtMgr.CreateObservationPoint ( "ObservationPt1" ) 
+ObservationPt1.SetCenter 1.4395,    0 
+ObservationPt1.SetDepthExpr "" 
+ObservationPt1.SetEnabled  True 
+ObservationPt1.Collect2DTE  False, False 
+ObservationPt1.Collect2DTM  False, False 
+ObservationPt1.Collect3D  True, True, False, False, False, False 
+
+' Until here is the definition of the design using script. To obtain the code of your design, click on Simulation -> Generate Layout Script.
+' NOTE: The version of OptiFDTD used for this FDP is 9.0. This code might not work for different versions.
+'--------------------------------------------------------------------------------------------------
+' From here is the personal code to change parameters of the design and saving the power spectrum output to a .txt file.
+
+NumIteraciones_medio_exterior = 4 'Aire: n = 1, Agua: n = 1.33, Etanol: n = 1.35, Isopropanol: n = 1.37    
+NumIteraciones_geometria = 3      'Etching = 30 [nm] & Gold = 40 [nm], Etching = 30 [nm] & Gold = 60 [nm], Etching = 45 [nm] & Gold = 60 [nm]   
+NumIteraciones_sustrato = 2       'Silicon, Glass 
+NumIteraciones_cromo_titanio = 2  'Chrome, Titanium 
+NumIteraciones_espesor = 2        '1 [nm], 2 [nm] 
+
+Dim  medio_exterior, geometria, sustrato, cromo_titanio, espesor
+ 
+Sub Sub_CalcPowerSpectrum(LineName, StartWavelength, EndWavelength, NumberOfPoints, InputPlaneName)    
+    Dim fhs              'For the output of the result   
+    Dim power_val        'The Power At X Wavelength   
+    Dim observation_line 'The line object to the LineName.    
+    Dim powerval         'To calculate the power spectrum 
+       
+    Set observation_line  = ObservePtMgr.GetObjFromID(LineName)   
+ 
+    
+    'Calculate the power spectrum.       
+    powerval = observation_line.CalcNormalizedPowerSpectrum(StartWavelength, EndWavelength, NumberOfPoints, InputPlaneName)       
+    
+    'Save the result to the file.        
+    Set fhs = CreateObject("Scripting.FileSystemObject")   
+    Set OutputFile = fhs.OpenTextFile("No_Nitruro_" & medio_exterior & geometria & sustrato & cromo_titanio & espesor & "PowerSpectrum.txt", 8, True)  
+ 
+ 
+    For n_index = 0 to NumberOfPoints -1                
+        power_val = observation_line.GetNormalizedPowerAtSpectralPoint( n_index )    
+         
+        OutputFile.WriteLine( CStr(power_val)) 
+        'OutputFile.WriteLine( CStr(n_index))                 
+    Next       
+    Set fhs = Nothing   
+End Sub     
+     
+ 
+for x = 1 to NumIteraciones_medio_exterior     
+    if x = 1 then    
+       WaferParams.SetMaterial "external_medium"    
+       WGMgr.OutputMsg("El índice de refracción del medio exterior es: 1")   
+       medio_exterior = "n_1_" 
+    else     
+        if x = 2 then    
+            WaferParams.SetMaterial "external_medium_133"    
+            WGMgr.OutputMsg("El índice de refracción del medio exterior es: 1.33") 
+            medio_exterior = "n_133_"   
+        else    
+            if x = 3 then    
+                WaferParams.SetMaterial "external_medium_135"    
+                WGMgr.OutputMsg("El índice de refracción del medio exterior es: 1.35")  
+                medio_exterior = "n_135_"  
+            else    
+                WaferParams.SetMaterial "external_medium_137"    
+                WGMgr.OutputMsg("El índice de refracción del medio exterior es: 1.37") 
+                medio_exterior = "n_137_"   
+            end if    
+        end if    
+    end if    
+    for y = 1 to NumIteraciones_geometria     
+        if y = 1 then    
+            ParamMgr.SetParam "etching", 0.03     
+            ParamMgr.SetParam "gold", 0.04    
+            WGMgr.OutputMsg("El valor de etching es: 0.03")   
+            WGMgr.OutputMsg("El valor de gold es: 0.04")   
+            geometria = "e_30_g_40_" 
+        else     
+            if y = 2 then    
+                ParamMgr.SetParam "etching", 0.03    
+                ParamMgr.SetParam "gold", 0.06    
+                WGMgr.OutputMsg("El valor de etching es: 0.03")   
+                WGMgr.OutputMsg("El valor de gold es: 0.06")  
+                geometria = "e_30_g_60_"  
+            else    
+                ParamMgr.SetParam "etching", 0.045    
+                ParamMgr.SetParam "gold", 0.06    
+                WGMgr.OutputMsg("El valor de etching es: 0.045")   
+                WGMgr.OutputMsg("El valor de gold es: 0.06")  
+                geometria = "e_45_g_60_"  
+            end if    
+        end if    
+        for z = 1 to NumIteraciones_sustrato     
+            if z = 1 then    
+                Linear3.SetProfileName "Channel_silicon"     
+                Linear1.SetProfileName "Channel_silicon"           
+                WGMgr.OutputMsg("El sustrato es ahora de silicio") 
+                sustrato = "Si_"   
+                   
+            else    
+                Linear3.SetProfileName "Channel_glass"    
+                Linear1.SetProfileName "Channel_glass"
+                substrate.SetProfileName "Channel_glass"  'Para que así el Nitruro tenga el mismo índice que el sustrato
+                WGMgr.OutputMsg("El sustrato es ahora de vidrio") 
+                sustrato = "Glass_"   
+                    
+            end if    
+            for k = 1 to NumIteraciones_cromo_titanio     
+                if k = 1 then     
+                    Linear11.SetProfileName "Channel_Chrome"    
+                    Linear2.SetProfileName "Channel_Chrome"    
+                    Linear5.SetProfileName "Channel_Chrome"   
+                    WGMgr.OutputMsg("Ahora hay cromo") 
+                    cromo_titanio = "Cr_"   
+                    
+                else     
+                    Linear11.SetProfileName "Channel_tio2"    
+                    Linear2.SetProfileName "Channel_tio2"    
+                    Linear5.SetProfileName "Channel_tio2"    
+                    WGMgr.OutputMsg("Ahora hay titanio") 
+                    cromo_titanio = "Ti_"   
+                end if    
+                for g = 1 to NumIteraciones_espesor     
+                    if g = 1 then    
+                        ParamMgr.SetParam "chrome", 0.001    
+                        WGMgr.OutputMsg("El ancho del cromo/titanio es de: 0.001")   
+                        espesor = "1nm_" 
+                    else    
+                        ParamMgr.SetParam "chrome", 0.002   
+                        WGMgr.OutputMsg("El ancho del cromo/titanio es de: 0.002") 
+                        espesor = "2nm_"    
+                    end if    
+                    ParamMgr.Simulate  
+                    Sub_CalcPowerSpectrum "Reflected", 0.4, 0.9, 200, "InputPlane1"                               
+                Next    
+            Next    
+        Next    
+    Next    
+Next
