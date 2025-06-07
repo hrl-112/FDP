@@ -15,10 +15,10 @@ This repository contains the codes for VBScript, Arduino &amp; Python used to co
 ## Software
 
 ### OptiFDTD
-<img src="Pictures/OptiFDTD.jpeg">
+<img src="Pictures/OptiFDTD.png">
 
 ### Arduino
-<img src="Pictures/Arduino.jpeg">
+<img src="Pictures/Arduino.png">
 
 ### Python
-<img src="Pictures/Python.jpeg">
+<img src="Pictures/Python.png">
