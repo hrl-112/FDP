@@ -6,7 +6,7 @@ This repository contains the codes for VBScript, Arduino &amp; Python used to co
 ### Arduino Uno
 <img src="Pictures/Arduino_Uno.jpeg">
 
-### Raspberry pi 3
+### Raspberry Pi 3
 <img src="Pictures/Raspberry_Pi.jpeg">
 
 ### C12880MA
